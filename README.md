@@ -11,7 +11,7 @@
 
 A modern, full-stack MERN application for managing team projects, tasks, and workflows with a Kanban board, real-time activity log, and role-based access.
 
-**Author:** Aaditya Gunjal
+**Author:** Yash Hule
 
 ---
 
