@@ -239,10 +239,9 @@ Register users through the app. First user can be Admin.
 
 **Get In Touch**
 
-- **Email:** [aadigunjal0975@gmail.com](mailto:aadigunjal0975@gmail.com)
-- **Phone:** +91 84335 09521
-- **LinkedIn:** [aadityagunjal0975](https://www.linkedin.com/in/aadityagunjal0975/)
-- **Location:** Dombivli, Maharashtra, India
+- **Email:** [huleyash3610@gmail.com](mailto:huleyash3610@gmail.com)
+- **Phone:** +91 7558373610
+- **Location:** Ghatkopar, Mumbai, Maharashtra, India
 
 **Professional Inquiries Welcome** - Open to freelance projects, collaboration opportunities, and full-time positions.
 
@@ -257,7 +256,7 @@ This project is created for portfolio and educational purposes.
 ```
 MIT License
 
-Copyright (c) 2026 Aaditya Gunjal
+Copyright (c) 2026 Yash Hule
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
