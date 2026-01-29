@@ -20,7 +20,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           onClick={onClose}
         />
       )}
-      
+
       {/* Sidebar */}
       <div
         className={`
