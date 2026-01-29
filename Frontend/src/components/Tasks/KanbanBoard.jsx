@@ -127,20 +127,20 @@ const KanbanBoard = ({ projectId }) => {
 
   return (
     <div className="animate-fade-in">
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-semibold text-text-primary mb-2 drop-shadow-lg tracking-tight">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 md:mb-6 gap-3 sm:gap-0">
+        <h2 className="text-xl md:text-2xl font-semibold text-text-primary drop-shadow-lg tracking-tight">
           TASK BOARD
         </h2>
         <button
           onClick={() => setShowForm(true)}
-          className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-smooth"
+          className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white px-4 md:px-5 py-2 md:py-2.5 rounded-lg font-semibold text-sm transition-smooth w-full sm:w-auto"
         >
           + Add Task
         </button>
       </div>
 
       <DragDropContext onDragEnd={handleDragEnd}>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
           {Object.entries(tasks).map(([status, taskList]) => {
             return (
               <div

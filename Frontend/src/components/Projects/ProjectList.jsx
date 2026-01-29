@@ -70,19 +70,19 @@ const ProjectList = () => {
 
   return (
     <div className="animate-fade-in">
-      <div className="flex justify-between items-center mb-8">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 md:mb-8 gap-3 sm:gap-0">
         <div>
-          <h1 className="text-3xl font-semibold text-text-primary mb-2 drop-shadow-lg tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-semibold text-text-primary mb-1 md:mb-2 drop-shadow-lg tracking-tight">
             PROJECTS
           </h1>
-          <p className="text-text-secondary text-base font-normal">
+          <p className="text-text-secondary text-sm md:text-base font-normal">
             Manage your team projects and tasks...
           </p>
         </div>
         {isAdmin && (
           <button
             onClick={() => setShowForm(true)}
-            className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white px-6 py-3 rounded-lg font-semibold transition-smooth"
+            className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-semibold transition-smooth text-sm md:text-base w-full sm:w-auto"
           >
             + Create Project
           </button>
@@ -90,7 +90,7 @@ const ProjectList = () => {
       </div>
 
       {projects.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {projects.map((project) => (
             <ProjectCard
               key={project._id}

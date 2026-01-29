@@ -54,20 +54,20 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="space-y-8 animate-fade-in">
-      <div className="flex items-center justify-between mb-6">
+    <div className="space-y-6 md:space-y-8 animate-fade-in">
+      <div className="flex items-center justify-between mb-4 md:mb-6">
         <div>
-          <h1 className="text-4xl font-semibold text-text-primary mb-2 drop-shadow-lg tracking-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-text-primary mb-1 md:mb-2 drop-shadow-lg tracking-tight">
             DASHBOARD
           </h1>
-          <p className="text-text-secondary text-base font-normal">
+          <p className="text-text-secondary text-sm md:text-base font-normal">
             Welcome back! Here&apos;s your Project Overview...
           </p>
         </div>
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         <div className="bg-surface p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all border border-border-dark group">
           <div className="flex items-center justify-between mb-4">
             <div>
@@ -158,12 +158,12 @@ const Dashboard = () => {
       </div>
 
       {/* Recent Activities */}
-      <div className="bg-surface p-6 rounded-2xl shadow-lg border border-border-dark">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-base font-semibold text-text-primary">
+      <div className="bg-surface p-4 md:p-6 rounded-2xl shadow-lg border border-border-dark">
+        <div className="flex items-center justify-between mb-4 md:mb-6">
+          <h2 className="text-sm md:text-base font-semibold text-text-primary">
             RECENT ACTIVITIES
           </h2>
-          <div className="flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-primary to-secondary text-white text-xs font-semibold rounded-full shadow-sm tracking-wide">
+          <div className="flex items-center gap-2 px-2 md:px-3 py-1 bg-gradient-to-r from-primary to-secondary text-white text-xs font-semibold rounded-full shadow-sm tracking-wide">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full rounded-full bg-[#F44336] opacity-75 animate-ping"></span>
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[#F44336]"></span>
@@ -176,13 +176,13 @@ const Dashboard = () => {
             recentActivities.map((activity) => (
               <div
                 key={activity._id}
-                className="flex items-start space-x-4 p-4 rounded-xl hover:bg-background transition-smooth border border-border-dark/30 hover:border-border-dark"
+                className="flex items-start space-x-3 md:space-x-4 p-3 md:p-4 rounded-xl hover:bg-background transition-smooth border border-border-dark/30 hover:border-border-dark"
               >
-                <div className="bg-primary/10 p-2.5 rounded-full flex-shrink-0">
-                  <FiCheckCircle className="text-primary" size={16} />
+                <div className="bg-primary/10 p-2 md:p-2.5 rounded-full flex-shrink-0">
+                  <FiCheckCircle className="text-primary" size={14} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-text-primary truncate">
+                  <p className="text-xs md:text-sm font-semibold text-text-primary truncate">
                     {activity.action}
                   </p>
                   <p className="text-xs text-text-secondary mt-1 truncate">
@@ -196,11 +196,11 @@ const Dashboard = () => {
               </div>
             ))
           ) : (
-            <div className="text-center py-12">
-              <div className="w-16 h-16 bg-background rounded-full flex items-center justify-center mx-auto mb-4 border border-border-dark">
-                <FiCheckCircle className="text-text-secondary" size={32} />
+            <div className="text-center py-8 md:py-12">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-background rounded-full flex items-center justify-center mx-auto mb-4 border border-border-dark">
+                <FiCheckCircle className="text-text-secondary" size={24} />
               </div>
-              <p className="text-text-secondary font-medium">
+              <p className="text-text-secondary font-medium text-sm md:text-base">
                 No recent activities
               </p>
               <p className="text-text-secondary/70 text-xs mt-1">

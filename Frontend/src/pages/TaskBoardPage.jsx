@@ -12,6 +12,7 @@ const TaskBoardPage = () => {
   const navigate = useNavigate();
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     fetchProject();
@@ -33,10 +34,10 @@ const TaskBoardPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <Navbar onMenuClick={() => setSidebarOpen(!sidebarOpen)} />
       <div className="flex">
-        <Sidebar />
-        <main className="flex-1 p-8">
+        <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+        <main className="flex-1 p-3 sm:p-4 md:p-6 lg:p-8">
           {loading ? (
             <div className="flex flex-col items-center justify-center h-96 animate-fade-in">
               <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4"></div>

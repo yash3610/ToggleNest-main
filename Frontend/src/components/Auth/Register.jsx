@@ -55,10 +55,10 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8 bg-surface p-8 rounded-2xl shadow-xl border border-border-dark">
+    <div className="min-h-screen flex items-center justify-center bg-background py-6 sm:py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-6 md:space-y-8 bg-surface p-6 sm:p-8 rounded-2xl shadow-xl border border-border-dark">
         <div>
-          <h2 className="mt-2 text-center text-3xl font-semibold text-text-primary">
+          <h2 className="mt-2 text-center text-2xl sm:text-3xl font-semibold text-text-primary">
             Create your account
           </h2>
           <p className="mt-2 text-center text-sm text-text-secondary">
@@ -66,7 +66,7 @@ const Register = () => {
           </p>
         </div>
 
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+        <form className="mt-6 md:mt-8 space-y-4 md:space-y-6" onSubmit={handleSubmit}>
           {error && (
             <div className="bg-border-error/10 border border-border-error text-border-error px-4 py-3 rounded-lg text-sm font-medium">
               {error}

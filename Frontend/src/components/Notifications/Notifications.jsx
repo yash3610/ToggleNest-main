@@ -115,19 +115,19 @@ const Notifications = () => {
               setDisabled(true); // clicking outside disables notifications as requested
             }}
           />
-          <div className="absolute right-0 mt-5 w-96 bg-surface rounded-2xl border border-border-dark z-20 max-h-[32rem] overflow-hidden flex flex-col">
-            <div className="p-4 border-b border-border-dark flex justify-between items-center bg-surface sticky top-0 z-10">
-              <h3 className="text-[18px] font-semibold text-text-primary tracking-tight">
+          <div className="absolute right-0 mt-5 w-80 sm:w-96 bg-surface rounded-2xl border border-border-dark z-20 max-h-[32rem] overflow-hidden flex flex-col shadow-xl">
+            <div className="p-3 sm:p-4 border-b border-border-dark flex justify-between items-center bg-surface sticky top-0 z-10">
+              <h3 className="text-base sm:text-[18px] font-semibold text-text-primary tracking-tight">
                 Notifications
               </h3>
 
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-2 sm:space-x-3">
                 {unreadCount > 0 && (
                   <button
                     onClick={handleMarkAllAsRead}
-                    className="text-[10px] text-primary hover:text-secondary font-semibold transition-colors uppercase tracking-wide"
+                    className="text-[9px] sm:text-[10px] text-primary hover:text-secondary font-semibold transition-colors uppercase tracking-wide"
                   >
-                    Mark all as read
+                    Mark all read
                   </button>
                 )}
 
@@ -147,7 +147,7 @@ const Notifications = () => {
 
             <div className="overflow-y-auto flex-1 custom-scrollbar">
               {loading ? (
-                <div className="p-8 text-center text-text-secondary">
+                <div className="p-6 sm:p-8 text-center text-text-secondary text-sm">
                   Loading...
                 </div>
               ) : notifications.length > 0 ? (
@@ -156,15 +156,15 @@ const Notifications = () => {
                     <div
                       key={notification._id}
                       onClick={() => handleNotificationClick(notification)}
-                      className={`p-4 hover:bg-white/5 cursor-pointer transition-smooth ${
+                      className={`p-3 sm:p-4 hover:bg-white/5 cursor-pointer transition-smooth ${
                         !notification.read ? 'bg-primary/5' : ''
                       }`}
                     >
-                      <div className="flex justify-between items-start">
-                        <div className="flex-1">
-                          <div className="flex items-center space-x-2 mb-1">
+                      <div className="flex justify-between items-start gap-2">
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center space-x-2 mb-1 flex-wrap">
                             <span
-                              className={`text-xs font-semibold px-2 py-1 rounded-full ${
+                              className={`text-[10px] sm:text-xs font-semibold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full ${
                                 notification.type === 'Task Assigned'
                                   ? 'bg-primary/20 text-primary'
                                   : notification.type === 'Project Assigned'
@@ -177,24 +177,24 @@ const Notifications = () => {
                               {notification.type}
                             </span>
                             {!notification.read && (
-                              <span className="w-2 h-2 bg-primary rounded-full"></span>
+                              <span className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>
                             )}
                           </div>
-                          <p className="text-sm text-text-primary font-medium mb-1">
+                          <p className="text-xs sm:text-sm text-text-primary font-medium mb-1 break-words">
                             {notification.message}
                           </p>
                           {notification.sender && (
-                            <p className="text-xs text-text-secondary">
+                            <p className="text-[10px] sm:text-xs text-text-secondary truncate">
                               From: {notification.sender.name}
                             </p>
                           )}
-                          <p className="text-xs text-text-secondary mt-1">
+                          <p className="text-[10px] sm:text-xs text-text-secondary mt-1">
                             {new Date(notification.createdAt).toLocaleString()}
                           </p>
                         </div>
                         <button
                           onClick={(e) => handleDelete(notification._id, e)}
-                          className="text-text-secondary hover:text-border-error ml-2 transition-colors"
+                          className="text-text-secondary hover:text-border-error transition-colors text-lg flex-shrink-0"
                         >
                           ×
                         </button>
@@ -203,7 +203,7 @@ const Notifications = () => {
                   ))}
                 </div>
               ) : (
-                <div className="p-8 text-center text-text-secondary">
+                <div className="p-6 sm:p-8 text-center text-text-secondary text-sm">
                   No notifications yet
                 </div>
               )}

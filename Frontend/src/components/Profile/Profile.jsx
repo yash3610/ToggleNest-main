@@ -121,13 +121,13 @@ const Profile = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6 animate-fade-in">
+    <div className="max-w-4xl mx-auto space-y-4 md:space-y-6 animate-fade-in">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-semibold text-text-primary mb-2 drop-shadow-lg tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-semibold text-text-primary mb-1 md:mb-2 drop-shadow-lg tracking-tight">
             PROFILE SETTINGS
           </h1>
-          <p className="text-text-secondary text-base font-normal">
+          <p className="text-text-secondary text-sm md:text-base font-normal">
             Manage your account information...
           </p>
         </div>
@@ -135,7 +135,7 @@ const Profile = () => {
 
       {message.text && (
         <div
-          className={`px-4 py-3 rounded-lg ${
+          className={`px-3 md:px-4 py-2 md:py-3 rounded-lg text-sm md:text-base ${
             message.type === 'success'
               ? 'bg-accent-green/20 border border-accent-green text-accent-green'
               : 'bg-border-error/20 border border-border-error text-border-error'
@@ -147,38 +147,38 @@ const Profile = () => {
 
       {/* Profile Information Card */}
       <div className="bg-surface rounded-xl shadow-md border border-border-dark overflow-hidden">
-        <div className="bg-gradient-to-r from-primary to-secondary p-6">
-          <div className="flex items-center space-x-4">
-            <div className="w-20 h-20 rounded-full bg-surface flex items-center justify-center">
-              <FiUser className="text-primary" size={40} />
+        <div className="bg-gradient-to-r from-primary to-secondary p-4 md:p-6">
+          <div className="flex items-center space-x-3 md:space-x-4">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-surface flex items-center justify-center flex-shrink-0">
+              <FiUser className="text-primary" size={32} />
             </div>
-            <div className="text-white">
-              <h2 className="text-2xl font-bold">{user.name}</h2>
-              <p className="text-white/80">{user.email}</p>
-              <span className="inline-block mt-2 px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">
+            <div className="text-white min-w-0">
+              <h2 className="text-xl md:text-2xl font-bold truncate">{user.name}</h2>
+              <p className="text-white/80 text-sm md:text-base truncate">{user.email}</p>
+              <span className="inline-block mt-2 px-2 md:px-3 py-0.5 md:py-1 bg-white/20 rounded-full text-xs md:text-sm font-semibold">
                 {user.role}
               </span>
             </div>
           </div>
         </div>
 
-        <div className="p-6">
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="text-xl font-bold text-text-primary">
+        <div className="p-4 md:p-6">
+          <div className="flex items-center justify-between mb-4 md:mb-6">
+            <h3 className="text-lg md:text-xl font-bold text-text-primary">
               Personal Information
             </h3>
             {!isEditing && (
               <button
                 onClick={() => setIsEditing(true)}
-                className="flex items-center space-x-2 text-primary hover:opacity-80 font-semibold"
+                className="flex items-center space-x-1 md:space-x-2 text-primary hover:opacity-80 font-semibold text-sm md:text-base"
               >
-                <FiEdit2 size={18} />
+                <FiEdit2 size={16} className="md:w-[18px] md:h-[18px]" />
                 <span>Edit</span>
               </button>
             )}
           </div>
 
-          <form onSubmit={handleUpdateProfile} className="space-y-4">
+          <form onSubmit={handleUpdateProfile} className="space-y-3 md:space-y-4">
             <div>
               <label className="block text-sm font-semibold text-text-secondary mb-2">
                 <FiUser className="inline mr-2" />
